@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="styledata.css">
+
+</head>
+<body>
+    <h1 style="margin-left:500px; font-size: 50px; ">DATA MANAGEMENT</h1>
+    
+    <a href="index.html" class="btn" style="font-weight: bold;">Quay lại</a>
+    
+    <div class="search-container">  
+        <select id="searchColumn" style="border-radius: 16px;">
+            <option value="temp">Nhiệt độ</option>
+            <option value="hum">Độ ẩm</option>
+            <option value="light">Ánh sáng</option>
+            <option value="date">Ngày </option>
+        </select>
+        <input type="text"style="border-radius: 16px;" id="searchInput" placeholder="Nhập số liệu tìm kiếm...">
+        <button id="searchButton" style="border-radius: 16px;">Tìm kiếm</button>
+    </div>
+    <table class="table table-hover " >
+        <thead class="table-primary">
+            <tr>
+                <th>Lần Đo</th>
+                <th >
+                    Nhiệt độ
+                    <span value="temp" id="sort-by-temperature-incre" class="sort-icon">   &#x2191; </span>
+                    <span value="temp" id="sort-by-temperature-decre" class="sort-icon">   &#x2193;</span>
+                </th>
+                <th>
+                    Độ ẩm
+                    <span value="hum" id="sort-by-humidity-incre" class="sort-icon">   &#x2191; </span>
+                    <span value="hum" id="sort-by-humidity-decre" class="sort-icon">   &#x2193;</span>
+                </th>
+                <th >
+                    Ánh sáng
+                    <span value="light" id="sort-by-light-incre" class="sort-icon">   &#x2191; </span>
+                    <span value="light" id="sort-by-light-decre" class="sort-icon">   &#x2193;</span>
+                </th>
+                <th >
+                    Thời Gian
+                    <span value="time" id="sort-by-time-incre" class="sort-icon">   &#x2191; </span>
+                    <span value="time" id="sort-by-time-decre" class="sort-icon">   &#x2193;</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- data from database -->
+        </tbody>
+    </table>
+    <div class="pagination">
+        <button id="prevBtn" >Previous</button>
+        <div id="pageBtns"></div>
+        <button id="nextBtn">Next</button>
+    </div>
+</body>
+<script src="dataJs.js"></script> 
+</html>

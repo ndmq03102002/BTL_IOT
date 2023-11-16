@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://kit.fontawesome.com/1be2f108e2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    
+</head>
+<body>
+    <header style="width: 100%; height: 40px; margin :auto;background-color:#000000"> 
+                <div class="col-sm-12">
+                    <div class="btn-group" style=" margin-left: 1300px;  ">    
+                        <a class="btn btn-secondary dropdown-toggle" style="border-radius: 50%;display: block; margin-left: 100px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill"></i>
+                          </a>          
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:" class="dropdown-item"><i class="bi bi-person"></i> MSV: B20DCCN567</a></li>
+                            <li><a href="javascript:" class="dropdown-item"><i class="bi bi-phone"></i> Phone: 0961264306</a></li>
+                            <li><a href="message.html" class="dropdown-item"><i class="bi bi-envelope"></i> Email: Nguyendinhmanhquynh@gmail.com</a></li>
+                        
+                        </ul>
+                      </div>
+    </header>
+     <div  style="background-color:white;height:700px; margin-bottom: 50px;">
+        <div class="row">
+            <div  class="col-sm-3 col-pd"style="padding-left: 50px;" >
+                <div class="khoi khoi-size">
+                        <p >Nhiệt độ</p>
+                        <p style="display: inline; " class="count1"></p>
+                        <span><i class='fa-solid fa-temperature-full'></i></span>
+     
+                </div>
+            </div> 
+            <div class="col-sm-3 col-pd">
+                <div class="khoi khoi-size">
+                    <p> Độ ẩm</p>
+                    <p style="display: inline;" class="count2"></p>
+                    <span> <i class="bi bi-moisture"></i></span>
+                </div>
+            </div>  
+            <div class="col-sm-3 col-pd" style="padding-right: 50px;">                   
+                <div class="khoi khoi-size">
+                    <p>Ánh sáng</p>
+                    <p style="display: inline;" class="count3"></p>
+                    <span> <i class="bi bi-moisture"></i></span>
+                </div>         
+            </div>
+            <div class="col-sm-3 col-pd" style="padding-right: 50px;">                   
+                <div class="khoi khoi-size">
+                    <p>Ánh sáng</p>
+                    <p style="display: inline;" class="count4"></p>
+                    <span> <i class="bi bi-moisture"></i></span>
+                </div>         
+            </div>    
+            <div class="col-sm-8 ">
+                <div class="khoi" style="height: 450px;width: 970px; float:right">
+                    <canvas id="myChart" style="border-radius: 3%; width:100%;height: 100%;background-color: rgb(231, 229, 226);"></canvas>
+                </div> 
+
+            </div>
+            <div class="col-sm-4 ">
+                <div class="khoi khoi1" style=" background-color: white; height: 200px; width: 450px; float: left; display: flex; justify-content: center; align-items: center;">
+                    <div class="fan">
+                        <div class="blade blade-1"></div>
+                        <div class="blade blade-2"></div>
+                        <div class="blade blade-3"></div>
+                        <div class="stand"></div>
+                    </div>
+                    <div class="button" style="margin: auto;">
+                        <button class="btn btn-success " onclick="OnFan()" style="--bs-btn-padding-y: 15px; --bs-btn-padding-x: 50px; --bs-btn-font-size: 20px; ">ON</button>
+                         <button class="btn btn-danger " onclick="OffFan()" style="margin-top: 20px; --bs-btn-padding-y: 15px; --bs-btn-padding-x: 50px; --bs-btn-font-size: 20px;">OFF</button>
+                   
+                    </div>
+              
+                </div>
+                <div class="khoi " style="background-color: white; margin-bottom: 20px; height: 215px; width: 450px; float: left; display: flex; justify-content: center; align-items: center;">
+                    <div class="light" >
+                        <div class="light-bulb" > </div>
+                    </div>
+                    <div class="button"  style="margin: auto;">
+                        <button class="btn btn-success " onclick="OnLight()" style="--bs-btn-padding-y: 15px; --bs-btn-padding-x: 50px; --bs-btn-font-size: 20px; ">ON</button>
+                         <button class="btn btn-danger " onclick="OffLight()" style="margin-top: 20px; --bs-btn-padding-y: 15px; --bs-btn-padding-x: 50px; --bs-btn-font-size: 20px;">OFF</button>
+                   
+                    </div>
+              
+                </div>
+            </div>     
+        </div>  
+    </div>
+    <p> 
+   
+    <script>
+         
+      
+    
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+       <script src="js.js"></script>   
+    <script src="jquery.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

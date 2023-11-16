@@ -1,0 +1,134 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.khoi {
+  width: 100%;
+  height: 200px;
+  margin-right: 0px;
+  margin-bottom: 27px;
+  background-color: #9fb4d0;
+
+  box-shadow: 0px 0px 5px 2px rgba(97, 95, 151, 0.47);
+  border-radius: 3%;
+}
+.khoi1 {
+  width: 100%;
+  height: 200px;
+  margin-right: 0px;
+  margin-bottom: 27px;
+  background: linear-gradient(to right, #f2994a, #f2c94c);
+}
+.khoi2 {
+  width: 100%;
+  height: 200px;
+  margin-right: 0px;
+  margin-bottom: 27px;
+  background: linear-gradient(to right, #4ac2f2, #4c62f2);
+}
+.khoi3 {
+  width: 100%;
+  height: 200px;
+  margin-right: 0px;
+  margin-bottom: 27px;
+  background: linear-gradient(to right, #f8d90f, #f2ff00);
+}
+.khoii {
+  width: 100%;
+  height: 500px;
+  background-color: black;
+}
+.abc {
+  margin-bottom: 30px;
+}
+.col-pd {
+  padding: 20px;
+}
+.khoi-size {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+.fan {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.blade {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform-origin: 0 50%;
+  background-color: #000000;
+  border-radius: 50%;
+}
+
+.blade-1 {
+  width: 50px;
+  height: 80px;
+  clip-path: polygon(0 50%, 100% 0, 50% 50%);
+  transform: rotate(0deg);
+  /* animation: rotateFan1 1s linear infinite; */
+}
+
+.blade-2 {
+  width: 50px;
+  height: 80px;
+  clip-path: polygon(0 50%, 100% 0, 50% 50%);
+  transform: rotate(120deg);
+  /* animation: rotateFan2 1s linear infinite; */
+}
+
+.blade-3 {
+  width: 50px;
+  height: 80px;
+  clip-path: polygon(0 50%, 100% 0, 50% 50%);
+  transform: rotate(240deg);
+  /* animation: rotateFan3 1s linear infinite; */
+}
+
+@keyframes rotateFan2 {
+  to {
+    transform: rotate(480deg);
+  }
+}
+@keyframes rotateFan1 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateFan3 {
+  to {
+    transform: rotate(600deg);
+  }
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.light {
+  width: 200px;
+  height: 200px;
+}
+
+.light-bulb {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(251 242 231);
+  border: 3px solid #000;
+  border-radius: 50%;
+  position: relative;
+  left: 90px;
+  top: 80px;
+}
+@keyframes bulbLight {
+  to {
+    border: 5px solid transparent;
+    box-shadow: 0 0 30px 50px rgba(255, 255, 0, 0.912);
+  }
+}

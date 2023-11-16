@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <style>
+      body {
+        background: linear-gradient(to right, #74ebd5, #9face6);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .pre_container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex :1;
+      }
+      .container {
+        background-color: white;
+        border: 2px solid #333;
+        border-collapse: collapse;
+        width: 80%;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+
+      .search-container {
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      input {
+        color: #000;
+        width: 200px;
+        border: 2px solid #75e4b0ed;
+        margin-right: 20px;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 2px solid #333;
+        background-color: white;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #333;
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .pagination {
+        margin-top: 20px;
+        display: flex;
+        list-style: none;
+        padding: 0;
+      }
+
+      .page-item {
+        margin-right: 10px;
+      }
+
+      .page-link {
+        text-decoration: none;
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      .page-link:hover {
+        background-color: #0056b3;
+      }
+
+      .sort-icon {
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      button {
+        border-radius: 5px;
+        margin-right: 3px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+      }
+      select {
+        color: #000;
+        border: 2px solid #75e4b0ed;
+        padding: 5px;
+        border-radius: 16px;
+        background: transparent; /* Loại bỏ nền màu mặc định */
+        -webkit-appearance: none; /* Loại bỏ giao diện mặc định của trình duyệt trên Safari/Chrome */
+        -moz-appearance: none; /* Loại bỏ giao diện mặc định của trình duyệt trên Firefox */
+        appearance: none; /* Loại bỏ giao diện mặc định của trình duyệt */
+        background-image: url("path/to/your-arrow-icon.png"); /* Thay đổi biểu tượng mũi tên dropdown */
+        background-repeat: no-repeat;
+        background-position: right center;
+      }
+
+      /* Tùy chỉnh hover state cho select */
+      select:hover {
+        border-color: #007bff; /* Màu khi hover */
+      }
+
+      /* Tùy chỉnh khi select được focus */
+      select:focus {
+        outline: none; /* Loại bỏ border focus */
+      }
+    </style>
+  </head>
+
+  <body>
+    <header style="width: 100%; height: 40px;background: linear-gradient(to right, #4ac2f2, #4c62f2)"> 
+      <div class="col-sm-12 data">
+          <a href="index.html" class="btn" style="font-weight: bold;">Trang chủ</a>
+          <a href="history.html" class="btn" style="font-weight: bold;">History</a>
+          <div class="btn-group" >
+              <a class="btn btn-white dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-fill"></i>
+              </a>         
+              <ul class="dropdown-menu">
+                  <li><a href="javascript:" class="dropdown-item"><i class="bi bi-person"></i> MSV: B20DCCN567</a></li>
+                  <li><a href="javascript:" class="dropdown-item"><i class="bi bi-phone"></i> Phone: 0961264306</a></li>
+                  <li><a href="message.html" class="dropdown-item"><i class="bi bi-envelope"></i> Email: Nguyendinhmanhquynh@gmail.com</a></li>
+              </ul>
+            </div>
+      </div>      
+  </header>
+  <div class = "pre_container">
+    < class="container">
+      <h1 style="text-align: center; font-size: 30px">DATA MANAGEMENT</h1>
+      <div class="search-container">
+        <select id="searchColumn" style="border-radius: 16px">
+          <option value="temp">Nhiệt độ</option>
+          <option value="hum">Độ ẩm</option>
+          <option value="light">Ánh sáng</option>
+          <option value="time">Thời gian</option>
+        </select>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Nhập số liệu tìm kiếm..."
+        />
+        <button id="searchButton">Tìm kiếm</button>
+      </div>
+      <table class="table table-hover">
+        <thead class="table-primary">
+          <tr>
+            <th>Lần Đo</th>
+            <th>
+              Nhiệt độ
+              <span
+                value="temp"
+                id="sort-by-temperature-incre"
+                class="sort-icon"
+              >
+                &#x2191;
+              </span>
+              <span
+                value="temp"
+                id="sort-by-temperature-decre"
+                class="sort-icon"
+              >
+                &#x2193;</span
+              >
+            </th>
+            <th>
+              Độ ẩm
+              <span value="hum" id="sort-by-humidity-incre" class="sort-icon">
+                &#x2191;
+              </span>
+              <span value="hum" id="sort-by-humidity-decre" class="sort-icon">
+                &#x2193;</span
+              >
+            </th>
+            <th>
+              Ánh sáng
+              <span value="light" id="sort-by-light-incre" class="sort-icon">
+                &#x2191;
+              </span>
+              <span value="light" id="sort-by-light-decre" class="sort-icon">
+                &#x2193;</span
+              >
+            </th>
+            <th>
+              Thời Gian
+              <span value="time" id="sort-by-time-incre" class="sort-icon">
+                &#x2191;
+              </span>
+              <span value="time" id="sort-by-time-decre" class="sort-icon">
+                &#x2193;</span
+              >
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- data from database -->
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button id="prevBtn">Previous</button>
+        <div id="pageBtns"></div>
+        <button id="nextBtn">Next</button>
+      </div>
+
+
+    <div>
+      <select id = "select">
+
+      </select>
+    </div>
+
+
+    </div>
+  </div>
+  </body>
+  <script src="dataJs.js"></script>
+  <script src="jquery.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</html>
